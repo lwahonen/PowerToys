@@ -4,12 +4,24 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+	<PublishSingleFile>true</PublishSingleFile>
+	<SelfContained>true</SelfContained>
     <Nullable>enable</Nullable>
+	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <OutputPath>..\..\..\..\$(Platform)\$(Configuration)\WinUI3Apps</OutputPath>
+    <ApplicationIcon>..\FileLocksmithUI\Assets\FileLocksmith\FileLocksmith.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="..\FileLocksmithUI\Assets\FileLocksmith\FileLocksmith.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FileLocksmithLibInterop\FileLocksmithLibInterop.vcxproj" />
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="dotnet publish -r win-x64 -p:PublishSingleFile=true --self-contained false" />
+  </Target>
 
 </Project>
