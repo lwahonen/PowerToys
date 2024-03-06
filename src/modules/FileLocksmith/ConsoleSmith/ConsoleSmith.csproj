@@ -9,11 +9,11 @@
     <Nullable>enable</Nullable>
 	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <OutputPath>..\..\..\..\$(Platform)\$(Configuration)\WinUI3Apps</OutputPath>
-    <ApplicationIcon>..\FileLocksmithUI\Assets\FileLocksmith.ico</ApplicationIcon>
+    <ApplicationIcon>..\FileLocksmithUI\Assets\FileLocksmith\Icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="..\FileLocksmithUI\Assets\FileLocksmith.ico" />
+    <Content Include="..\FileLocksmithUI\Assets\FileLocksmith\Icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
